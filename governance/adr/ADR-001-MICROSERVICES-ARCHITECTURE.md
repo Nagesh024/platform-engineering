@@ -1,90 +1,53 @@
-# ADR-001: Microservices Architecture
+# ADR-001
+
+## Title
+
+Microservices Architecture
 
 ## Status
 
 Approved
 
----
-
-## Date
-
-2026-06-22
-
----
-
 ## Context
 
-The Rapido Clone platform must scale independently across ride booking, payments, notifications, users, and drivers.
+The platform requires independent deployment, scaling,
+and ownership of services.
 
-A monolithic architecture would create deployment bottlenecks and scaling limitations.
-
----
+Monolithic architecture creates deployment bottlenecks.
 
 ## Decision
 
 Adopt Microservices Architecture.
 
-Each business capability will be deployed as an independent Spring Boot service.
+Each bounded context owns:
+
+- Database
+- APIs
+- Events
 
 Examples:
 
-- user-service
-- auth-service
-- driver-service
-- ride-service
-- payment-service
-- notification-service
-- wallet-service
-
----
+- Auth Service
+- Ride Service
+- Driver Service
+- Payment Service
+- Notification Service
 
 ## Alternatives Considered
 
-### Monolith
+Monolith
 
-Pros:
-
-- Simpler initially
-
-Cons:
-
-- Difficult scaling
-- Large deployments
-- Tight coupling
-
-### Microservices
-
-Pros:
-
-- Independent scaling
-- Independent deployment
-- Better fault isolation
-
-Cons:
-
-- Higher operational complexity
-
----
+Modular Monolith
 
 ## Consequences
 
-Positive:
+Pros:
 
-- Better scalability
-- Better maintainability
+- Independent Scaling
+- Faster Releases
+- Team Autonomy
 
-Negative:
+Cons:
 
-- More infrastructure required
-
----
-
-## Risk Assessment
-
-Medium
-
----
-
-## Approved By
-
-Chief Architect
+- Increased Operational Complexity
+- Distributed Transactions

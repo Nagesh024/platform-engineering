@@ -1,4 +1,8 @@
-# ADR-002: Kafka Event Driven Architecture
+# ADR-002
+
+## Title
+
+Kafka Event Driven Architecture
 
 ## Status
 
@@ -6,41 +10,36 @@ Approved
 
 ## Context
 
-Ride booking, payments, notifications, and analytics require asynchronous communication.
-
----
+Synchronous communication creates tight coupling.
 
 ## Decision
 
-Use Apache Kafka as the enterprise event backbone.
+Use Apache Kafka as enterprise messaging platform.
 
-Topics:
+Events:
 
-- ride-created
-- driver-assigned
-- payment-completed
-- notification-sent
+- RideCreated
+- DriverAssigned
+- PaymentCompleted
+- NotificationSent
 
----
-
-## Alternatives
+## Alternatives Considered
 
 RabbitMQ
 
+ActiveMQ
+
+REST Only
+
+## Consequences
+
 Pros:
-- Simpler
+
+- Scalability
+- Loose Coupling
+- Event Replay
 
 Cons:
-- Less suitable for large-scale event streaming
 
----
-
-## Risk Assessment
-
-Medium
-
----
-
-## Approved By
-
-Chief Architect
+- Operational Complexity
+- Eventual Consistency
