@@ -1,26 +1,49 @@
-# ADR-XXX: Decision Title
+# ADR-XXX
 
-## Status
+## Metadata
 
-Proposed | Approved | Rejected | Superseded
+ADR ID: ADR-XXX
 
----
+Title:
 
-## Date
+Author:
 
-YYYY-MM-DD
+Date:
+
+Reviewers:
+
+Status:
+
+Proposed | Under Review | Approved | Rejected | Deprecated | Superseded
+
+Related ADRs:
+
+Business Owner:
+
+Technical Owner:
 
 ---
 
 ## Context
 
-What business or technical problem are we solving?
+Describe the problem.
+
+Why is this decision required?
+
+What business or technical challenge exists?
 
 ---
 
 ## Decision
 
-Describe the decision.
+Describe the chosen solution.
+
+Include:
+
+- Architecture
+- Technology
+- Design Patterns
+- Deployment Strategy
 
 ---
 
@@ -28,44 +51,107 @@ Describe the decision.
 
 ### Option 1
 
+Description:
+
 Pros:
--
 
 Cons:
--
+
+---
 
 ### Option 2
 
+Description:
+
 Pros:
--
 
 Cons:
--
+
+---
+
+### Option 3
+
+Description:
+
+Pros:
+
+Cons:
 
 ---
 
 ## Consequences
 
-Positive:
+### Positive
+
 -
 
-Negative:
 -
+
+-
+
+### Negative
+
+-
+
+-
+
+-
+
+---
+
+## Security Impact
+
+Authentication Impact:
+
+Authorization Impact:
+
+Data Protection Impact:
+
+Compliance Impact:
+
+---
+
+## Scalability Impact
+
+Traffic Impact:
+
+Database Impact:
+
+Infrastructure Impact:
+
+Cost Impact:
+
+---
+
+## Operational Impact
+
+Monitoring:
+
+Alerting:
+
+Runbooks:
+
+Support Requirements:
 
 ---
 
 ## Risk Assessment
 
-Low / Medium / High
+| Risk | Probability | Impact | Mitigation |
+|--------|--------|--------|--------|
 
 ---
 
-## Approved By
+## Approval
 
 Chief Architect:
 
-Security Architect:
+Backend Lead:
 
-Platform Architect:
+DevOps Lead:
 
-Date:
+Security Lead:
+
+QA Lead:
+
+Approval Date:
