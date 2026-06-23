@@ -26,3 +26,38 @@ Resolved
 Accepted
 
 Deferred
+
+# Technical Debt Registry
+
+## Categories
+
+- Code Quality
+- Security
+- Performance
+- Infrastructure
+- Architecture
+- Documentation
+
+## Lifecycle
+
+OPEN
+↓
+IN_PROGRESS
+↓
+RESOLVED
+↓
+CLOSED
+
+## Governance
+
+Critical Debt:
+30 Days
+
+High Debt:
+60 Days
+
+Medium Debt:
+90 Days
+
+Low Debt:
+180 Days

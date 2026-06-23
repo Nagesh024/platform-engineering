@@ -26,4 +26,4 @@ Vault
 
 ## Service Communication
 
-Istio mTLS
+Istio mTLSs

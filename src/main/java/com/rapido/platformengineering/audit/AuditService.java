@@ -2,16 +2,18 @@ package com.rapido.platformengineering.audit;
 
 import com.rapido.platformengineering.entity.AuditEvent;
 import com.rapido.platformengineering.repository.AuditEventRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
 @Service
-@RequiredArgsConstructor
 public class AuditService {
 
-    private final AuditEventRepository repository = null;
+    private final AuditEventRepository repository;
+
+    public AuditService(AuditEventRepository repository) {
+        this.repository = repository;
+    }
 
     public void save(
             String type,
@@ -19,12 +21,12 @@ public class AuditService {
             String action
     ) {
 
-        AuditEvent event = AuditEvent.builder()
-                .eventType(type)
-                .actor(actor)
-                .action(action)
-                .createdAt(LocalDateTime.now())
-                .build();
+        AuditEvent event = new AuditEvent();
+
+        event.setEventType1(type);
+        event.setActor(actor);
+        event.setActor(action);
+        event.setCreatedAt(LocalDateTime.now());
 
         repository.save(event);
     }
