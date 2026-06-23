@@ -11,6 +11,8 @@ VALUES
 ('Monitoring','Prometheus Grafana Integration','ACTIVE'),
 
 ('Documentation','Developer Documentation','ACTIVE');
+
+
 INSERT INTO security_controls
 (control_name, category, description, mandatory, compliance_level)
 VALUES
@@ -28,3 +30,41 @@ VALUES
  'Secrets stored in Vault',
  true,
  'CRITICAL');
+ 
+ INSERT INTO dependency_inventory
+(
+dependency_name,
+version,
+license_type,
+vulnerability_count,
+status,
+approved
+)
+VALUES
+(
+'Spring Boot',
+'3.3.5',
+'Apache 2.0',
+0,
+'ACTIVE',
+true
+);
+
+INSERT INTO dependency_inventory
+(
+dependency_name,
+version,
+license_type,
+vulnerability_count,
+status,
+approved
+)
+VALUES
+(
+'Kafka Client',
+'3.8.0',
+'Apache 2.0',
+0,
+'ACTIVE',
+true
+);
