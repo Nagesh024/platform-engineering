@@ -31,5 +31,8 @@ public class TechnicalDebtController {
     @GetMapping("/dashboard")
     public TechnicalDebtDashboardResponse dashboard() {
         return service.getDashboard();
+    }@GetMapping("/paged")
+    public List<TechnicalDebt> paged() {
+        return service.findAll();
     }
 }
