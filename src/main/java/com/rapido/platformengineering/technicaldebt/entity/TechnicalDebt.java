@@ -1,6 +1,7 @@
 package com.rapido.platformengineering.technicaldebt.entity;
 
 import com.rapido.platformengineering.technicaldebt.enums.DebtCategory;
+import com.rapido.platformengineering.technicaldebt.enums.DebtSeverity;
 import com.rapido.platformengineering.technicaldebt.enums.DebtStatus;
 import jakarta.persistence.*;
 
@@ -16,6 +17,8 @@ public class TechnicalDebt {
 
     @Column(nullable = false)
     private String title;
+    @Enumerated(EnumType.STRING)
+    private DebtSeverity severity;
 
     @Column(length = 5000)
     private String description;
@@ -73,6 +76,13 @@ public class TechnicalDebt {
 
     public void setCategory(DebtCategory category) {
         this.category = category;
+    }
+    public DebtSeverity getSeverity() {
+        return severity;
+    }
+
+    public void setSeverity(DebtSeverity severity) {
+        this.severity = severity;
     }
 
     public Integer getRiskScore() {

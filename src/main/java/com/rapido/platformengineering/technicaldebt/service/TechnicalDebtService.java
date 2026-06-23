@@ -1,12 +1,15 @@
 package com.rapido.platformengineering.technicaldebt.service;
 
-import com.rapido.platformengineering.technicaldebt.entity.TechnicalDebt;
-
 import com.rapido.platformengineering.technicaldebt.dto.TechnicalDebtDashboardResponse;
+import com.rapido.platformengineering.technicaldebt.entity.TechnicalDebt;
 import com.rapido.platformengineering.technicaldebt.enums.DebtCategory;
+import com.rapido.platformengineering.technicaldebt.enums.DebtSeverity;
 import com.rapido.platformengineering.technicaldebt.enums.DebtStatus;
 import com.rapido.platformengineering.technicaldebt.repository.TechnicalDebtRepository;
 import org.springframework.stereotype.Service;
+import com.rapido.platformengineering.technicaldebt.enums.DebtCategory;
+import com.rapido.platformengineering.technicaldebt.enums.DebtStatus;
+import com.rapido.platformengineering.technicaldebt.enums.DebtSeverity;
 
 import java.util.List;
 
@@ -14,19 +17,27 @@ import java.util.List;
 public class TechnicalDebtService {
 
     private final TechnicalDebtRepository repository;
+    private final TechnicalDebtScoringService scoringService;
 
     public TechnicalDebtService(
-            TechnicalDebtRepository repository) {
+            TechnicalDebtRepository repository,
+            TechnicalDebtScoringService scoringService) {
+
         this.repository = repository;
+        this.scoringService = scoringService;
     }
 
     public TechnicalDebt save(TechnicalDebt debt) {
+
+        scoringService.score(debt);
+
         return repository.save(debt);
     }
 
     public List<TechnicalDebt> findAll() {
         return repository.findAll();
     }
+
     public TechnicalDebtDashboardResponse getDashboard() {
 
         TechnicalDebtDashboardResponse response =
@@ -58,11 +69,23 @@ public class TechnicalDebtService {
         response.setDocumentationDebts(
                 repository.countByCategory(DebtCategory.DOCUMENTATION));
 
+        response.setLowSeverity(
+                repository.countBySeverity(DebtSeverity.LOW));
+
+        response.setMediumSeverity(
+                repository.countBySeverity(DebtSeverity.MEDIUM));
+
+        response.setHighSeverity(
+                repository.countBySeverity(DebtSeverity.HIGH));
+
+        response.setCriticalSeverity(
+                repository.countBySeverity(DebtSeverity.CRITICAL));
+
         long totalRisk =
                 repository.findAll()
                         .stream()
-                        .mapToLong(
-                                debt -> debt.getRiskScore() == null
+                        .mapToLong(debt ->
+                                debt.getRiskScore() == null
                                         ? 0
                                         : debt.getRiskScore())
                         .sum();

@@ -21,9 +21,47 @@ public class TechnicalDebtDashboardResponse {
     private long documentationDebts;
 
     private long totalRiskScore;
+    private long lowSeverity;
+
+    private long mediumSeverity;
+
+    private long highSeverity;
+
+    private long criticalSeverity;
 
     public long getTotalDebts() {
         return totalDebts;
+    }
+    public long getLowSeverity() {
+        return lowSeverity;
+    }
+
+    public void setLowSeverity(long lowSeverity) {
+        this.lowSeverity = lowSeverity;
+    }
+
+    public long getMediumSeverity() {
+        return mediumSeverity;
+    }
+
+    public void setMediumSeverity(long mediumSeverity) {
+        this.mediumSeverity = mediumSeverity;
+    }
+
+    public long getHighSeverity() {
+        return highSeverity;
+    }
+
+    public void setHighSeverity(long highSeverity) {
+        this.highSeverity = highSeverity;
+    }
+
+    public long getCriticalSeverity() {
+        return criticalSeverity;
+    }
+
+    public void setCriticalSeverity(long criticalSeverity) {
+        this.criticalSeverity = criticalSeverity;
     }
 
     public void setTotalDebts(long totalDebts) {
