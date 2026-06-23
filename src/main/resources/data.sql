@@ -50,6 +50,7 @@ VALUES
 true
 );
 
+
 INSERT INTO dependency_inventory
 (
 dependency_name,
@@ -67,4 +68,38 @@ VALUES
 0,
 'ACTIVE',
 true
+);
+
+INSERT INTO technology_catalog
+(
+technology_name,
+version,
+status,
+owner,
+replacement_technology
+)
+VALUES
+(
+'Java',
+'17',
+'ACTIVE',
+'Platform Engineering',
+NULL
+);
+
+INSERT INTO technology_catalog
+(
+technology_name,
+version,
+status,
+owner,
+replacement_technology
+)
+VALUES
+(
+'Java',
+'11',
+'DEPRECATED',
+'Platform Engineering',
+'Java 17'
 );

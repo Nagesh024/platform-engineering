@@ -1,4 +1,4 @@
-CREATE TABLE technical_debt (
+CREATE TABLE IF NOT EXISTS technical_debt (
 
     id BIGSERIAL PRIMARY KEY,
 
