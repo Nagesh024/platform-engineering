@@ -16,3 +16,16 @@ A = Accountable
 R = Responsible
 C = Consulted
 I = Informed
+
+| Activity                     | CTO | Chief Architect | Product Owner | Security Lead | DevOps Lead | SRE Lead | QA Lead |
+| ---------------------------- | --- | --------------- | ------------- | ------------- | ----------- | -------- | ------- |
+| Architecture Approval        | A   | R               | C             | C             | C           | C        | I       |
+| Security Certification       | I   | C               | I             | A/R           | C           | C        | I       |
+| Infrastructure Certification | I   | C               | I             | C             | A/R         | C        | I       |
+| Monitoring Certification     | I   | C               | I             | I             | C           | A/R      | I       |
+| Functional Certification     | I   | I               | C             | I             | I           | I        | A/R     |
+| Performance Certification    | I   | C               | I             | I             | C           | A/R      | C       |
+| Risk Acceptance              | A   | R               | C             | C             | C           | C        | C       |
+| Go-Live Decision             | A   | R               | C             | C             | C           | C        | C       |
+| Launch Certification         | A   | R               | C             | C             | C           | C        | C       |
+| Emergency Rollback Approval  | A   | C               | I             | I             | R           | R        | I       |
